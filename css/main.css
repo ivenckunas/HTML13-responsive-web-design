@@ -2,8 +2,54 @@ body {
   background-color: rgb(173, 236, 210);
 }
 
+.posts {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .post {
   background-color: rgb(243, 216, 206);
   padding: 15px;
   border-radius: 10px;
+  transition: background-color 0.2s linear;
+}
+
+/* MEDIA QUERIES =========== */
+/* iki === max */
+/* nuo === min */
+
+@media screen and (max-width: 714px) {
+  /* taikom i raiska nuo 0px iki 714px */
+  .container {
+    padding: 10px;
+  }
+  .posts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .post {
+    background-color: #333;
+    color: white;
+  }
+
+  .post:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 5px;
+  }
+  .posts {
+    grid-template-columns: 1fr;
+  }
+  .post {
+    background-color: rgb(182, 213, 228);
+    color: black;
+  }
+  .post:last-child {
+    grid-column: span 1;
+  }
 }
